@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Collide!</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body ng-app='boomApp' ng-controller='boomCont'>
+	Enter a site to test collisions on:<input type="text" ng-model="pageSrc">
+	<button ng-click='pageSrc="https://docs.angularjs.org"'>Test on the angularjs docs!</button>
+	<canvas id='boom-cont' width='{{ifSize.x}}' height='{{ifSize.y}}' style='height:{{ifSize.y}}px;width:{{ifSize.x}}px;'></canvas>
+	<i class="fa fa-file-pdf-o" aria-hidden="true" id='aim-pdf' ng-show='pageSrc && pageSrc.length && !exploding' style='left:{{mouse.x}}px;top:{{mouse.y}}px;font-size:{{fontSize}}pt;'></i>
+	<iframe src='{{getUrl(pageSrc)}}' id='ifr'></iframe>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
