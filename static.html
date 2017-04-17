@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Static!</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body ng-app='statApp' ng-controller='statCont'>
+	Enter a site to generate static: <input type="text" ng-model="pageSrc"><br>
+	<br>
+	<button class='btn btn-primary' ng-click='staticPg();'>Generate Static Page</button>
+	<canvas id='boom-cont' width='{{ifSize.x}}' height='{{ifSize.y}}' style='height:{{ifSize.y}}px;width:{{ifSize.x}}px;'></canvas>
+	<iframe src='{{getUrl(pageSrc)}}' id='ifr'></iframe>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="./js/stat.js"></script>
+</body>
+
+</html>

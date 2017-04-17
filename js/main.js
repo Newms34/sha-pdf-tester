@@ -69,12 +69,12 @@ var app = angular.module('boomApp', []).controller('boomCont', function($scope, 
                 if (!$scope.booms[j].life) {
                     numActive--;
                     if($scope.booms[j].active){
-
+                    	
                     theRad = $scope.booms[j].startSz + $scope.booms[j].origLife - $scope.booms[j].life;
                     var gradient = $scope.ctx.createRadialGradient($scope.booms[j].x, $scope.booms[j].y, theRad, $scope.booms[j].x, $scope.booms[j].y, 0);
                     gradient.addColorStop(0, "transparent");
                     gradient.addColorStop(.05, "rgba(0,0,0,.5)");
-                    gradient.addColorStop(.1, "black");
+                    gradient.addColorStop(.1, "rgba(0,0,0,.8)");
                     gradient.addColorStop(1, "black");
                     $scope.ctx.fillStyle = gradient;
                     $scope.ctx.fillRect(0, 0, $scope.canv.width, $scope.canv.height);
