@@ -8,9 +8,9 @@
 </head>
 
 <body ng-app='statApp' ng-controller='statCont'>
-	Enter a site to generate static: <input type="text" ng-model="pageSrc"><br>
-	<br>
-	<button class='btn btn-primary' ng-click='staticPg();'>Generate Static Page</button>
+<h3>Test Procedure: </h3>
+	1. Enter a site to generate static: <input type="text" ng-model="pageSrc"><br>
+	<button class='btn btn-primary' ng-click='staticPg();'>2. Generate Static Page</button> <button class='btn btn-info pull-right' onclick='window.location.href="./index.html"'>Test PDF collisions instead</button>
 	<canvas id='boom-cont' width='{{ifSize.x}}' height='{{ifSize.y}}' style='height:{{ifSize.y}}px;width:{{ifSize.x}}px;'></canvas>
 	<iframe src='{{getUrl(pageSrc)}}' id='ifr'></iframe>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>

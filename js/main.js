@@ -4,6 +4,7 @@ var app = angular.module('boomApp', []).controller('boomCont', function($scope, 
     $scope.mouse = { x: 0, y: 0 }
     $scope.firing = false;
     $scope.booms = [];
+    $scope.pageSrc = 'https://docs.angularjs.org'
     $scope.exploding=false;
     $scope.canv = document.querySelector('#boom-cont');
     $scope.ctx = $scope.canv.getContext("2d");
@@ -14,8 +15,8 @@ var app = angular.module('boomApp', []).controller('boomCont', function($scope, 
     $scope.fontSize = 80;
     $scope.canv.onmousemove = function(e) {
         if (!$scope.firing && $scope.pageSrc) {
-            $scope.mouse.x = e.offsetX - 50;
-            $scope.mouse.y = e.offsetY - 50;
+            $scope.mouse.x = e.offsetX-20;
+            $scope.mouse.y = e.offsetY+100;
             $scope.$digest();
         }
     };
@@ -46,6 +47,7 @@ var app = angular.module('boomApp', []).controller('boomCont', function($scope, 
     	$scope.$digest();
         var numBooms = Math.floor(Math.random() * 3) + 1;
         $scope.booms = [];
+        $scope.mouse.y-=100;
         for (var i = 0; i < numBooms; i++) {
             var lifeLen = Math.floor(Math.random() * 30) + 20;
             $scope.booms.push({
